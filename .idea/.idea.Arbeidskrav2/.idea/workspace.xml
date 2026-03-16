@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8b621d48-bede-472b-8ee4-2ff150491cd2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Enums/Categories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Enums/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Enums/Conditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Enums/Condition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Listing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Listing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Marketplace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Marketplace.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Transaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Transaction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Arbeidskrav2/Reviews.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Arbeidskrav2/User.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -85,13 +86,14 @@
       <option name="presentableId" value="Default" />
       <updated>1773659166306</updated>
       <workItem from="1773659167572" duration="7217000" />
-      <workItem from="1773671970459" duration="639000" />
+      <workItem from="1773671970459" duration="1897000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -31,7 +31,4 @@ public class Listing
         Buyer = buyer;
         Status = ListingStatus.Sold;
     }
-
-
-
 }
