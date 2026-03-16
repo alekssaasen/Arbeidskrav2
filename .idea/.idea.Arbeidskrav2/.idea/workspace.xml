@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b621d48-bede-472b-8ee4-2ff150491cd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Reviews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Review.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Enums/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Enums/Categories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Enums/Condition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Enums/Conditions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Listing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Listing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arbeidskrav2/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/User.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773659166306</updated>
-      <workItem from="1773659167572" duration="5296000" />
+      <workItem from="1773659167572" duration="7217000" />
     </task>
     <servers />
   </component>

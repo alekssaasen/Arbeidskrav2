@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace Arbeidskrav2;
 
 public class User
