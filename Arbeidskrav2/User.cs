@@ -4,7 +4,7 @@ public class User
 {
    public string UserName { get; private set; }
    private string Password { get; set; }
-   public List<Listing> Listings { get; private set; } 
+   public List<Listing> UserListings { get; private set; } 
    public List<Review> Reviews { get; private set; }
    public List<Transaction> Transactions { get; private set; }
 
@@ -12,7 +12,7 @@ public class User
    {
       UserName = userName;
       Password = password;
-      Listings = new List<Listing>();
+      UserListings = new List<Listing>();
       Reviews = new List<Review>();
       Transactions = new List<Transaction>();
    }

@@ -1,3 +1,5 @@
+using Arbeidskrav2.Enums;
+
 namespace Arbeidskrav2;
 
 public class Marketplace
@@ -44,6 +46,19 @@ public class Marketplace
     public void Logout()
     {
         _currentUser = null;
-        throw new Exception("");
+    }
+
+    public void CreateListing(string title, string description, Category category, Condition condition, decimal price)
+    {
+        Listing listing = new Listing(title, description, category, condition, price, _currentUser);
+        _allListings.Add(listing);
+        _currentUser.UserListings.Add(listing);
+    }
+    
+    public List<Listing> GetAllAvailableListings()
+    {
+        IEnumerable<Listing> result = _allListings
+            .Where(s => s.Status != ListingStatus.Sold);
+        return result.ToList();
     }
 }
