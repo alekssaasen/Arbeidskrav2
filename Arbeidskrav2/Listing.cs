@@ -6,15 +6,15 @@ public class Listing
 {
     public string Title { get; private set; }
     public string Description { get; private set; }
-    public Categories Category { get; private set; }
-    public Conditions Condition { get; private set; }
+    public Category Category { get; private set; }
+    public Condition Condition { get; private set; }
     public ListingStatus Status { get; private set; }
     public decimal Price { get; private set; }
     public DateTime Date { get; private set; }
     public User? Buyer { get; private set; }
     public User Seller { get; private set; }
 
-    public Listing(string title, string description, Categories category, Conditions condition, decimal price, DateTime date)
+    public Listing(string title, string description, Category category, Condition condition, decimal price, User seller)
     {
         Title = title;
         Description = description;
@@ -22,12 +22,14 @@ public class Listing
         Condition = condition;
         Status = ListingStatus.Available;
         Price = price;
-        Date = date;
+        Seller = seller;
+        Date = DateTime.Now;
     }
 
-    public void isSold()
+    public void MarkAsSold(User buyer)
     {
-        throw new Exception("");
+        Buyer = buyer;
+        Status = ListingStatus.Sold;
     }
 
 

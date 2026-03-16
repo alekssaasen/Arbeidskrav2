@@ -1,6 +1,6 @@
 namespace Arbeidskrav2.Enums;
 
-public enum Categories
+public enum Category
 {
     Electronics,
     ClothingAndAccessories,

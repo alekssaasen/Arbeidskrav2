@@ -1,6 +1,6 @@
 namespace Arbeidskrav2.Enums;
 
-public enum Conditions
+public enum Condition
 {
     New,
     LikeNew,
