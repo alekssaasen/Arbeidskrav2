@@ -22,6 +22,15 @@ public class User
    {
       return 0.0;
    }
+
+   public bool VerifyPassword(string password)
+   {
+      if (Password == password)
+      {
+         return true;
+      }
+      return false;
+   }
    
    
 }
