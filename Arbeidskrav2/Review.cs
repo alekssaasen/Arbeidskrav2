@@ -1,6 +1,6 @@
 namespace Arbeidskrav2;
 
-public class Reviews
+public class Review
 {
     
 }
