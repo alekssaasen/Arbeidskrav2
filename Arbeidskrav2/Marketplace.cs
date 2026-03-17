@@ -61,4 +61,11 @@ public class Marketplace
             .Where(s => s.Status != ListingStatus.Sold);
         return result.ToList();
     }
+
+    public List<Listing> SearchListings(string keyword)
+    {
+        IEnumerable<Listing> result = _allListings
+            .Where(l => l.Title.ToLower().Contains(keyword.ToLower()) || l.Description.ToLower().Contains(keyword.ToLower()));
+        return result.ToList();
+    }
 }
