@@ -10,18 +10,24 @@ class Program
 
         Console.WriteLine("MarketPlace test");
         M.Register("Alek", "123");
-        bool success = M.Login("Alek", "123");
-        Console.WriteLine($"Login Alek: {success}");
-        M.CreateListing("Sofa", "Good to sit in!", Category.FurnitureAndHome, Condition.LikeNew, 5000.00m);
-        M.CreateListing("Bed", "Good to sit in!", Category.FurnitureAndHome, Condition.LikeNew, 5000.00m);
+        M.Login("Alek", "123");
+        M.CreateListing("Sofa", "Nice sofa!", Category.FurnitureAndHome, Condition.LikeNew, 5000.00m);
+        M.Logout();
+        
+       
 
+        M.Register("Zoe", "123");
+        M.Login("Zoe", "123");
+        M.CreateListing("Bed", "Good to sit in!", Category.FurnitureAndHome, Condition.LikeNew, 5000.00m);
         Console.WriteLine("Created Listing");
-        var available = M.GetAllAvailableListings();
-        Console.WriteLine($"Available listings: {available.Count}");
         
-        var foundListing = M.SearchListings("good");
+        var listings = M.GetAllAvailableListings();
+        var firstListing = listings[0];
+        
+        var foundListing = M.SearchListings("Sofa");
         Console.WriteLine($"Found listing! {foundListing.Count}");
-        
+        M.PurchaseListing(firstListing);
+        Console.WriteLine("Purchase complete");
 
     }
 }

@@ -68,4 +68,23 @@ public class Marketplace
             .Where(l => l.Title.ToLower().Contains(keyword.ToLower()) || l.Description.ToLower().Contains(keyword.ToLower()));
         return result.ToList();
     }
+
+    public void PurchaseListing(Listing listing)
+    {
+        if (listing.Status != ListingStatus.Available)
+        {
+            throw new Exception("This Listing is already sold.");
+        }
+        if (_currentUser == listing.Seller)
+        {
+            throw new Exception("You can't purchase your own listing.");
+        }
+        
+        Transaction transaction = new Transaction(_currentUser, listing.Seller, listing);
+        
+        listing.MarkAsSold(_currentUser);
+        _allTransactions.Add(transaction);
+        _currentUser.Transactions.Add(transaction);
+        listing.Seller.Transactions.Add(transaction);
+    }
 }
