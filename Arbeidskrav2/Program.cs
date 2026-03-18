@@ -13,8 +13,6 @@ class Program
         M.Login("Alek", "123");
         M.CreateListing("Sofa", "Nice sofa!", Category.FurnitureAndHome, Condition.LikeNew, 5000.00m);
         M.Logout();
-        
-       
 
         M.Register("Zoe", "123");
         M.Login("Zoe", "123");
@@ -28,6 +26,16 @@ class Program
         Console.WriteLine($"Found listing! {foundListing.Count}");
         M.PurchaseListing(firstListing);
         Console.WriteLine("Purchase complete");
+        
+        // Made _users public for testing
+        /*
+        var userOne = M._users[0];
+        var firstPurchase = userOne.Transactions[0];
+        M.LeaveReview(firstPurchase,6, "Nice woman!");
+        Console.WriteLine($"Seller has {firstPurchase.Seller.Reviews.Count} reviews");
+         */
+        
+        
 
     }
 }

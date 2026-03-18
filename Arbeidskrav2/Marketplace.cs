@@ -87,4 +87,23 @@ public class Marketplace
         _currentUser.Transactions.Add(transaction);
         listing.Seller.Transactions.Add(transaction);
     }
+
+    public void LeaveReview(Transaction transaction, int rating, string comment)
+    {
+        if (!_currentUser.Transactions.Contains(transaction))
+        {
+            throw new Exception("You need to purchase something before you can give a review.");
+        }
+        if (_currentUser != transaction.Buyer)
+        {
+            throw new Exception("You can't review your own transaction.");
+        }
+        if (rating < 1 || rating > 6)
+        {
+            throw new Exception("Give a rating between 1-6.");
+        }
+        Review review = new Review(_currentUser, transaction.Seller, transaction, rating, comment);
+        
+        transaction.Seller.Reviews.Add(review);
+    }
 }

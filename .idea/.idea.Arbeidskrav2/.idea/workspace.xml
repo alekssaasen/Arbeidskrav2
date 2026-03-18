@@ -51,6 +51,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -89,7 +90,8 @@
       <workItem from="1773771907164" duration="1652000" />
       <workItem from="1773773764030" duration="1278000" />
       <workItem from="1773832066696" duration="447000" />
-      <workItem from="1773854735270" duration="2267000" />
+      <workItem from="1773854735270" duration="6486000" />
+      <workItem from="1773865057695" duration="102000" />
     </task>
     <servers />
   </component>
@@ -118,5 +120,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
