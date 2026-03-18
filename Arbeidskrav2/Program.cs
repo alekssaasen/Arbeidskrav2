@@ -33,8 +33,9 @@ class Program
         var firstPurchase = userOne.Transactions[0];
         M.LeaveReview(firstPurchase,6, "Nice woman!");
         Console.WriteLine($"Seller has {firstPurchase.Seller.Reviews.Count} reviews");
-         */
-        
+
+        Console.WriteLine($"Average Rating: {userOne.GetAvgRating()}");
+        */
         
 
     }

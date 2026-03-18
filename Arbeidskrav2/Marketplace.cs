@@ -4,13 +4,6 @@ namespace Arbeidskrav2;
 
 public class Marketplace
 {
-    // business logic
-    /* Collection of:
-     Users,
-     Listings,
-     Transactions,
-    */
-    // User currently logged in
     private List<User> _users;
     private List<Listing> _allListings;
     private List<Transaction> _allTransactions;

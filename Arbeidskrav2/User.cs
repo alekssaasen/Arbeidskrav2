@@ -16,11 +16,13 @@ public class User
       Reviews = new List<Review>();
       Transactions = new List<Transaction>();
    }
-
-   // TODO: Calculate the rating of User.
+   
    public double GetAvgRating()
    {
-      return 0.0;
+      IEnumerable<int> result = Reviews
+         .Select(r => r.DiceRating);
+
+      return result.Average();
    }
 
    public bool VerifyPassword(string password)
@@ -31,6 +33,4 @@ public class User
       }
       return false;
    }
-   
-   
 }
