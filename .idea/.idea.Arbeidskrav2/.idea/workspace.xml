@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b621d48-bede-472b-8ee4-2ff150491cd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Arbeidskrav2/UI/MarketplaceApp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arbeidskrav2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Arbeidskrav2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Arbeidskrav2.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arbeidskrav2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbeidskrav2/UI/MarketplaceApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeidskrav2/UI/MarketplaceApp.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,8 @@
       <workItem from="1773854735270" duration="6486000" />
       <workItem from="1773865057695" duration="102000" />
       <workItem from="1773865183643" duration="4372000" />
-      <workItem from="1773869611806" duration="1505000" />
+      <workItem from="1773869611806" duration="1610000" />
+      <workItem from="1773928480333" duration="1818000" />
     </task>
     <servers />
   </component>
