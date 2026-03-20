@@ -2,6 +2,9 @@ namespace Arbeidskrav2;
 
 public class Review
 {
+    /// <summary>
+    /// Storage for what a review needs
+    /// </summary>
     public User Reviewer { get; }
     public User Seller { get; }
     public Transaction Transaction { get; }
@@ -9,7 +12,15 @@ public class Review
     // Comment is optional
     public string? Comment { get; }
     public DateTime Date { get; }
-
+    /// <summary>
+    /// Creates a review for a transaction with a rating from 1-6 and optional comment
+    /// </summary>
+    /// <param name="reviewer">The user leaving a review</param>
+    /// <param name="seller">The user being reviewed</param>
+    /// <param name="transaction">The transaction receiving a review</param>
+    /// <param name="diceRating">rating 1-6</param>
+    /// <param name="comment">optional comment</param>
+    /// <exception cref="ArgumentException">Thrown when rating is not between 1-6</exception>
     public Review(User reviewer, User seller, Transaction transaction, int diceRating, string? comment)
     {
         Reviewer = reviewer;

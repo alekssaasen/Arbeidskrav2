@@ -10,7 +10,7 @@ public class Marketplace
     private User? _currentUser;
     public User? GetCurrentUser() => _currentUser;
     /// <summary>
-    /// Constructor to instantiate and generate memory for the fields
+    /// Creates a list of users, listings, transactions and sets the currentUser to null. 
     /// </summary>
     public Marketplace()
     {

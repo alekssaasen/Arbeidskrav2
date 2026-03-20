@@ -17,7 +17,9 @@ public class MarketplaceApp
     {
         StartMenu();
     }
-
+    /// <summary>
+    /// Displays the initial menu and handles user registration and login
+    /// </summary>
     public void StartMenu()
     {
         bool running = true;
@@ -47,7 +49,9 @@ public class MarketplaceApp
             }
         } while (running);
     }
-
+    /// <summary>
+    /// Displays the main menu after login with options for listings, purchases, and reviews
+    /// </summary>
     public void ShowMainMenu()
     {
         bool running = true;
@@ -94,7 +98,9 @@ public class MarketplaceApp
             
         } while (running);
     }
-
+    /// <summary>
+    /// Handles user registration by prompting for username and password
+    /// </summary>
     public void HandleRegister()
     {
         string username = "";
@@ -114,6 +120,9 @@ public class MarketplaceApp
         Marketplace.Register(username, password);
         Console.WriteLine("Registration successful.");
     }
+    /// <summary>
+    /// Handles user login by prompting for credentials and validating them
+    /// </summary>
     public void HandleLogin()
     {
         string username = "";
@@ -142,6 +151,9 @@ public class MarketplaceApp
             ShowMainMenu();
         }
     }
+    /// <summary>
+    /// Handles creation of a new listing by prompting for all required details
+    /// </summary>
     public void HandleCreateListing()
     {
         string title = "";
@@ -256,7 +268,9 @@ public class MarketplaceApp
         }
         Marketplace.CreateListing(title, description, selectedCategory, selectedCondition, price);
     }
-    
+    /// <summary>
+    /// Displays all available listings with optional category filter
+    /// </summary>
         public void HandleBrowseListings()
     {
         Console.WriteLine("\n1. View all listings");
@@ -321,7 +335,10 @@ public class MarketplaceApp
             ShowListingDetails(listings[choice - 1]);
         }
     }
-
+    /// <summary>
+    /// Displays detailed information about a specific listing with purchase option
+    /// </summary>
+    /// <param name="listing">The listing to display</param>
     public void ShowListingDetails(Listing listing)
     {
         Console.WriteLine($"\n=== {listing.Title} ===");
@@ -356,6 +373,10 @@ public class MarketplaceApp
         }
     }
 
+    /// <summary>
+    /// Handles leaving a review for a purchased item
+    /// </summary>
+    /// <param name="listing">The listing being reviewed</param>
     public void HandleLeaveReview(Listing listing)
     {
         int rating = 0;
@@ -387,7 +408,9 @@ public class MarketplaceApp
             }
         }
     }
-
+    /// <summary>
+    /// Handles searching for listings by keyword
+    /// </summary>
     public void HandleSearchListings()
     {
         Console.Write("Enter search keyword: ");
@@ -414,7 +437,9 @@ public class MarketplaceApp
             ShowListingDetails(results[choice - 1]);
         }
     }
-
+    /// <summary>
+    /// Displays all listings created by the current user
+    /// </summary>
     public void HandleMyListings()
     {
         User user = Marketplace.GetCurrentUser();
@@ -433,6 +458,9 @@ public class MarketplaceApp
         user.UserListings.ForEach(listing => 
             Console.WriteLine($"- {listing.Title} ({listing.Status}) - {listing.Price} kr"));
     }
+    /// <summary>
+    /// Displays all purchases made by the current user
+    /// </summary>
     public void HandleMyPurchases()
     {
         User user = Marketplace.GetCurrentUser();
@@ -451,6 +479,9 @@ public class MarketplaceApp
         user.Transactions.ForEach(transaction => 
             Console.WriteLine($"- {transaction.Listing.Title} from {transaction.Seller.UserName} - {transaction.Listing.Price} kr"));
     }
+    /// <summary>
+    /// Displays all reviews received by the current user with average rating
+    /// </summary>
     public void HandleMyReviews()
     {
         User user = Marketplace.GetCurrentUser();
