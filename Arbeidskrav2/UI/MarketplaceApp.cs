@@ -381,7 +381,21 @@ public class MarketplaceApp
 
     public void HandleMyListings()
     {
+        User user = Marketplace.GetCurrentUser();
+        if (user == null)
+        {
+            return;
+        }
+
+        if (!user.UserListings.Any())
+        {
+            Console.WriteLine("\nYou have no listings");
+            return;
+        }
         
+        Console.WriteLine("\n=== My Listings ===");
+        user.UserListings.ForEach(listing => 
+            Console.WriteLine($"- {listing.Title} ({listing.Status}) - {listing.Price} kr"));
     }
     public void HandleMyPurchases()
     {
