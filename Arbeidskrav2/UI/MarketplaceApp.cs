@@ -33,6 +33,7 @@ public class MarketplaceApp
                     break;
                 case "2": 
                     HandleLogin();
+                    ShowMainMenu();
                     break;
                 case "3":
                     Console.WriteLine("You chose exit");
@@ -42,6 +43,54 @@ public class MarketplaceApp
                     Console.WriteLine("enter a valid number: ");
                     continue;
             }
+        } while (running);
+    }
+
+    public void ShowMainMenu()
+    {
+        bool running = true;
+        do
+        {
+            Console.WriteLine("=== Main Menu ===");
+            Console.WriteLine($"1. Create Listing");
+            Console.WriteLine($"2. Browse Listings");
+            Console.WriteLine($"3. Search Listings");
+            Console.WriteLine($"4. My Listings");
+            Console.WriteLine($"5. My Purchases");
+            Console.WriteLine($"6. My Reviews");
+            Console.WriteLine("7. Log Out ");
+            
+            userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    HandleCreateListing();
+                    break;
+                case "2": 
+                    HandleBrowseListings();
+                    break;
+                case "3":
+                    HandleSearchListings();
+                    running = false;
+                    break;
+                case "4":
+                    HandleMyListings();
+                    break;
+                case "5": 
+                    HandleMyPurchases();
+                    break;
+                case "6":
+                    HandleMyReviews();
+                    running = false;
+                    break;
+                case "7":
+                    Marketplace.Logout();
+                    break;
+                default:
+                    Console.WriteLine("enter a valid option: ");
+                    continue;
+            }
+            
         } while (running);
     }
 
@@ -66,7 +115,6 @@ public class MarketplaceApp
     }
     public void HandleLogin()
     {
-        
         string username = "";
         while (string.IsNullOrWhiteSpace(username))
         {
@@ -91,5 +139,30 @@ public class MarketplaceApp
         {
             Console.WriteLine("Login successful.");
         }
+    }
+    public void HandleCreateListing()
+    {
+            
+    }
+    
+    public void HandleBrowseListings()
+    {
+        
+    }
+    public void HandleSearchListings()
+    {
+        
+    }
+    public void HandleMyListings()
+    {
+        
+    }
+    public void HandleMyPurchases()
+    {
+        
+    }
+    public void HandleMyReviews()
+    {
+        
     }
 }
