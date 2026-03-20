@@ -62,6 +62,11 @@ public class Marketplace
             .Where(l => l.Title.ToLower().Contains(keyword.ToLower()) || l.Description.ToLower().Contains(keyword.ToLower()));
         return result.ToList();
     }
+    
+    public List<Listing> FilterByCategory(Category category)
+    {
+        return _allListings.Where(l => l.Category == category && l.Status == ListingStatus.Available).ToList();
+    }
 
     public void PurchaseListing(Listing listing)
     {

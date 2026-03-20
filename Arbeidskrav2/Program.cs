@@ -9,6 +9,6 @@ class Program
         Marketplace M = new Marketplace();
         MarketplaceApp app = new MarketplaceApp(M);
         
-        app.StartMenu();
+        app.Run();
     }
 }

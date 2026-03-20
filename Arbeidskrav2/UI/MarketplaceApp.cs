@@ -15,7 +15,7 @@ public class MarketplaceApp
     
     public void Run()
     {
-        
+        StartMenu();
     }
 
     public void StartMenu()
@@ -36,7 +36,6 @@ public class MarketplaceApp
                     break;
                 case "2": 
                     HandleLogin();
-                    ShowMainMenu();
                     break;
                 case "3":
                     Console.WriteLine("You chose exit");
@@ -148,14 +147,14 @@ public class MarketplaceApp
         string title = "";
         while (string.IsNullOrWhiteSpace(title))
         {
-            Console.WriteLine("Enter listing title: ");
+            Console.WriteLine("Enter a title: ");
             title = Console.ReadLine();
         }
         
         string description = "";
         while (string.IsNullOrWhiteSpace(description))
         {
-            Console.WriteLine("Enter listing title: ");
+            Console.WriteLine("Enter a description: ");
             description = Console.ReadLine();
         }
         
@@ -246,17 +245,13 @@ public class MarketplaceApp
         while (price <= 0)
         {
             Console.WriteLine("Enter price (kr): ");
-            if (decimal.TryParse(Console.ReadLine(), out decimal parsedPrice))
+            if (decimal.TryParse(Console.ReadLine(), out decimal parsedPrice) && parsedPrice > 0)
             {
                 price = parsedPrice;
-                if (price <= 0)
-                {
-                    Console.WriteLine("Price must be greater than 0!");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid price!");
-                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid price! Must be positive");
             }
         }
         Marketplace.CreateListing(title, description, selectedCategory, selectedCondition, price);
@@ -417,6 +412,25 @@ public class MarketplaceApp
     }
     public void HandleMyReviews()
     {
-        
+        User user = Marketplace.GetCurrentUser();
+        if (user == null)
+        {
+            return;
+        }
+
+        if (!user.Reviews.Any())
+        {
+            Console.WriteLine("You have no reviews yet.");
+            return;
+        }
+
+        double avgRating = user.GetAvgRating();
+        Console.WriteLine($"\n=== My Reviews (Average: {avgRating:F1}/6) ===");
+        user.Reviews.ForEach(review =>
+        {
+            Console.WriteLine($"- Rating: {review.DiceRating}/6");
+            if (!string.IsNullOrEmpty(review.Comment))
+                Console.WriteLine($"  \"{review.Comment}\"");
+        });
     }
 }
