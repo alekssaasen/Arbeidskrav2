@@ -262,14 +262,123 @@ public class MarketplaceApp
         Marketplace.CreateListing(title, description, selectedCategory, selectedCondition, price);
     }
     
-    public void HandleBrowseListings()
+        public void HandleBrowseListings()
     {
+        List<Listing> listings = Marketplace.GetAllAvailableListings();
         
+        if (listings.Count == 0)
+        {
+            Console.WriteLine("\nNo listings available.");
+            return;
+        }
+        
+        Console.WriteLine("\n=== Available Listings ===");
+        for (int i = 0; i < listings.Count; i++)
+        {
+            Listing l = listings[i];
+            Console.WriteLine($"{i + 1}. {l.Title} - {l.Price} kr ({l.Category}, {l.Condition})");
+        }
+        
+        Console.Write("\nSelect listing to view (0 to go back): ");
+        if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice <= listings.Count)
+        {
+            ShowListingDetails(listings[choice - 1]);
+        }
     }
+
+    public void ShowListingDetails(Listing listing)
+    {
+        Console.WriteLine($"\n=== {listing.Title} ===");
+        Console.WriteLine($"Seller: {listing.Seller.UserName}");
+        Console.WriteLine($"Category: {listing.Category}");
+        Console.WriteLine($"Condition: {listing.Condition}");
+        Console.WriteLine($"Price: {listing.Price} kr");
+        Console.WriteLine($"Description: {listing.Description}");
+        
+        Console.WriteLine("\n1. Buy this item");
+        Console.WriteLine("2. Go back");
+        Console.Write("Select option: ");
+        
+        string choice = Console.ReadLine();
+        if (choice == "1")
+        {
+            try
+            {
+                Marketplace.PurchaseListing(listing);
+                Console.WriteLine("\n✓ Purchase complete!");
+                
+                Console.Write("\nWould you like to leave a review? (Y/N): ");
+                if (Console.ReadLine()?.ToUpper() == "Y")
+                {
+                    HandleLeaveReview(listing);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nError: {ex.Message}");
+            }
+        }
+    }
+
+    public void HandleLeaveReview(Listing listing)
+    {
+        int rating = 0;
+        while (rating < 1 || rating > 6)
+        {
+            Console.Write("Rating (1-6): ");
+            int.TryParse(Console.ReadLine(), out rating);
+            if (rating < 1 || rating > 6)
+                Console.WriteLine("Rating must be 1-6!");
+        }
+        
+        Console.Write("Comment (or press Enter to skip): ");
+        string comment = Console.ReadLine();
+        
+        // Find the transaction for this purchase
+        Transaction transaction = Marketplace.GetCurrentUser().Transactions
+            .FirstOrDefault(t => t.Listing == listing);
+        
+        if (transaction != null)
+        {
+            try
+            {
+                Marketplace.LeaveReview(transaction, rating, comment);
+                Console.WriteLine("✓ Review submitted!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+    }
+
     public void HandleSearchListings()
     {
+        Console.Write("Enter search keyword: ");
+        string keyword = Console.ReadLine();
         
+        List<Listing> results = Marketplace.SearchListings(keyword);
+        
+        if (results.Count == 0)
+        {
+            Console.WriteLine("\nNo results found.");
+            return;
+        }
+        
+        Console.WriteLine($"\n=== Search Results ({results.Count}) ===");
+        for (int i = 0; i < results.Count; i++)
+        {
+            var l = results[i];
+            Console.WriteLine($"{i + 1}. {l.Title} - {l.Price} kr");
+        }
+        
+        Console.Write("\nSelect listing to view (0 to go back): ");
+        if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice <= results.Count)
+        {
+            ShowListingDetails(results[choice - 1]);
+        }
     }
+
     public void HandleMyListings()
     {
         

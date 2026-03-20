@@ -8,6 +8,7 @@ public class Marketplace
     private List<Listing> _allListings;
     private List<Transaction> _allTransactions;
     private User? _currentUser;
+    public User? GetCurrentUser() => _currentUser;
 
     public Marketplace()
     {
