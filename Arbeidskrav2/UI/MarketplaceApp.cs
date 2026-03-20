@@ -399,7 +399,21 @@ public class MarketplaceApp
     }
     public void HandleMyPurchases()
     {
+        User user = Marketplace.GetCurrentUser();
+        if (user == null)
+        {
+            return;
+        }
         
+        if (!user.Transactions.Any())
+        {
+            Console.WriteLine("You have no purchases.");
+            return;
+        }
+        
+        Console.WriteLine("\n=== My Purchases ===");
+        user.Transactions.ForEach(transaction => 
+            Console.WriteLine($"- {transaction.Listing.Title} from {transaction.Seller.UserName} - {transaction.Listing.Price} kr"));
     }
     public void HandleMyReviews()
     {
