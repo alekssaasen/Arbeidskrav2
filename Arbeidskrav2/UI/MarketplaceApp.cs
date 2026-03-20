@@ -259,7 +259,48 @@ public class MarketplaceApp
     
         public void HandleBrowseListings()
     {
-        List<Listing> listings = Marketplace.GetAllAvailableListings();
+        Console.WriteLine("\n1. View all listings");
+        Console.WriteLine("2. Filter by category");
+        Console.Write("Select option: ");
+    
+        string filterChoice = Console.ReadLine();
+        List<Listing> listings;
+    
+        if (filterChoice == "2")
+        {
+            Console.WriteLine("\nSelect Category:");
+            Console.WriteLine("1. Electronics");
+            Console.WriteLine("2. Clothing & Accessories");
+            Console.WriteLine("3. Furniture & Home");
+            Console.WriteLine("4. Books & Media");
+            Console.WriteLine("5. Sports & Outdoors");
+            Console.WriteLine("6. Other");
+            Console.Write("Select (1-6): ");
+        
+            string catChoice = Console.ReadLine();
+            Category? selectedCategory = catChoice switch
+            {
+                "1" => Category.Electronics,
+                "2" => Category.ClothingAndAccessories,
+                "3" => Category.FurnitureAndHome,
+                "4" => Category.BooksAndMedia,
+                "5" => Category.SportsAndOutdoors,
+                "6" => Category.Other,
+                _ => null
+            };
+        
+            if (selectedCategory == null)
+            {
+                Console.WriteLine("Invalid category!");
+                return;
+            }
+        
+            listings = Marketplace.FilterByCategory(selectedCategory.Value);
+        }
+        else
+        {
+            listings = Marketplace.GetAllAvailableListings();
+        }
         
         if (listings.Count == 0)
         {
